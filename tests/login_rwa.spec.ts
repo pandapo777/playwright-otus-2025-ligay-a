@@ -7,6 +7,13 @@ test('has title', async ({ page }) => {
 
 
 });
+test('has form authoriztion', async ({ page }) => {
+  await page.goto('https://rwa-194.87.102.103.sslip.io/login');
+
+  await expect(page.getByText('Sign inNeed an account?')).toBeVisible();
+
+
+});
 
 test('has field "password"', async ({ page }) => {
   await page.goto('https://rwa-194.87.102.103.sslip.io/login');
@@ -15,7 +22,7 @@ test('has field "password"', async ({ page }) => {
 
 });
 
-test('has "btn-submit"', async ({ page }) => {
+test('has button "Sign in"', async ({ page }) => {
   await page.goto('https://rwa-194.87.102.103.sslip.io/login');
 
   await expect(page.getByTestId('btn-submit')).toBeVisible();
