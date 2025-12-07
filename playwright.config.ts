@@ -19,7 +19,7 @@ export default defineConfig({
   //Нужно чтобы избежать бесконечных ожиданий, но при этом учитывать медленные операции
   timeout: 30000,
   //Настроим timeout для expect, чтобы тесты не падали слишком рано, если элемент загружается немного дольше.
-  expect: {timeout: 5000},
+  expect: {timeout: 15000},
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   //Если тесты запускаются в CI (то есть переменная CI установлена), то forbidOnly становится true.
   forbidOnly: !!process.env.CI,
@@ -54,15 +54,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
 
     /* Test against mobile viewports. */
     // {
